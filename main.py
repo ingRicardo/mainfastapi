@@ -3,7 +3,6 @@ from fastapi import FastAPI
 from controllers.item_controller import router as item_router
 
 
-
 # Initialize the FastAPI application instance
 app = FastAPI(title="My FastAPI App")
 
@@ -16,11 +15,6 @@ app.include_router(item_router)
 def read_root():
     # FastAPI automatically handles converting dictionaries to JSON responses
     return {"message": "Hello, FastAPI!"}
-
-# Define an optional route with a path parameter
-@app.get("/items/{item_id}")
-def read_item(item_id: int, q: str = None):
-    return {"item_id": item_id, "query_param": q}
 
 
 @app.get("/tutorial")
