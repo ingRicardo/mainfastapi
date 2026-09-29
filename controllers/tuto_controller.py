@@ -48,6 +48,18 @@ async def data_types():
     tup2 = t2[3]
     tup2min = t2[-3]
 
+    #Boolean Data Type
+    b_type1 = str(type(True))
+    b_type2 = str(type(False))
+
+    if 1:
+        t_type_1 = "1 is truthy"
+
+    if not 0:
+        t_type_0 = "0 is falsy"
+
+
     return  { "x" : x, "name" : name, "a" : a, "b" : b, "real": real , "imag" : imag ,
               "alist" : alist , "blist" : blist , "b3" : b3, "bm3" : bm3 , "s":s, "type_string_s": type_string_s , 
-              "tupstring": tupstring, "tup2": tup2, "tup2min": tup2min}
+              "tupstring": tupstring, "tup2": tup2, "tup2min": tup2min , "b_type1":b_type1 , "b_type2": b_type2,
+               "t_type_1" : t_type_1, "t_type_0" : t_type_0 }
