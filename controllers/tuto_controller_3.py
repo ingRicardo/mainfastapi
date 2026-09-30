@@ -7,6 +7,56 @@ router = APIRouter(
     tags=["Tuto_3"]
 )
 
+def fun():
+    return "Welcome to Riky"
+
+def evenOdd(x):
+    if (x % 2 == 0):
+        return "Even"
+    else:
+        return "Odd"
+
+def myFun(x, y=50):
+    return  (x , y)
+
+def student(fname, lname):
+    return (fname, lname)
+
+def nameAge(name, age):
+    return [("Hi, I am", name), ("My age is ", age)]
+
+def myFun2(*args, **kwargs):
+    res =[]
+    #print("Non-Keyword Arguments (*args):")
+    res.append("Non-Keyword Arguments (*args):")
+
+    for arg in args:
+        #print(arg)
+        res.append(arg)
+    res.append("Keyword Arguments (**kwargs):")
+
+    #print("Keyword Arguments (**kwargs):")
+    for key, value in kwargs.items():
+        #print(f"{key} == {value}")
+        res.append(f"{key} == {value}")
+
+    return res
+
+def f1():
+    s = 'I love Riky Mac'
+    def f2():
+        return(s)
+
+    return f2()
+
+def sq_value(num):
+    return num**2
+
+def myFunmuta(x):
+    x[0] = 20
+
+def myFunimmuta(x):
+    x = 20
 
 @router.get("/tuto3")
 async def tutorial_3():
@@ -86,5 +136,50 @@ async def tutorial_3():
         for j in range(i):
             loopvals.append(i)
 
+    # functions
+    res = fun()
+    eveodd1 = evenOdd(16)
+    eveodd2 = evenOdd(7)
+
+    #Types of Function Arguments
+
+    defparafunc = myFun(10)
+    typeofdefpara = str(type(defparafunc))
+
+    strres1 = student(fname='Geeks', lname='Practice')
+    strres2 = student(lname='Practice', fname='Geeks')
+
+    resnameage1 =  nameAge("Olivia", 27)
+
+    resnameage2 = nameAge(27, "Olivia")
+
+    resnametype = str(type(resnameage1))
+
+
+    argsres= myFun2('Hey', 'Welcome', first='Geeks', mid='for', last='Geeks')
+
+    #Function within Functions
+    innerfunc = f1()
+
+    #Return Statement
+
+    returnfunc = []
+    returnfunc.append(sq_value(2))
+    returnfunc.append(sq_value(-4))
+
+    #Pass by Reference and Pass by Value
+    mutares = ""
+    immutares = ""
+    b = [10, 11, 12, 13]
+    myFunmuta(b)
+    mutares = b
+
+    a = 10
+    myFunimmuta(a)
+    immutares= a
+
+
     return {"eligible" : eligible , "travel": travel, "person" :person, "discount": discount, "person2": s, "typeofnumber":numbertype,
-            "loopvals": loopvals}
+            "loopvals": loopvals, "resfunction": res, "eveodd1" : eveodd1, "eveodd2": eveodd2, "defparafunc": defparafunc, "typeofdefpara": typeofdefpara,
+            "strres1": strres1, "strres2":strres2, "resnameage1": resnameage1, "resnameage2": resnameage2, "resnametype": resnametype,
+            "argsres": argsres, "innerfunc": innerfunc, "returnfunc": returnfunc, "mutares": mutares, "immutares": immutares}
