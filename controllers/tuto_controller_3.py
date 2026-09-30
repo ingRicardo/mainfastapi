@@ -66,5 +66,25 @@ async def tutorial_3():
             numbertype="Two or Three"
         case _:
             numbertype="Other number"
+    # loops
 
-    return {"eligible" : eligible , "travel": travel, "person" :person, "discount": discount, "person2": s, "typeofnumber":numbertype}
+    loopvals=[]
+    n = 4
+    for i in range(0, n):
+        loopvals.append(i)
+
+    a = ["riky", "mac", "olv"]
+    for idx in range(len(a)):
+        loopvals.append(a[idx])
+
+    cnt = 0
+    while (cnt < 3):
+        cnt = cnt + 1
+        loopvals.append("Hello Rik")
+
+    for i in range(1, 5):
+        for j in range(i):
+            loopvals.append(i)
+
+    return {"eligible" : eligible , "travel": travel, "person" :person, "discount": discount, "person2": s, "typeofnumber":numbertype,
+            "loopvals": loopvals}
