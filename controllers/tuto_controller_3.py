@@ -1,7 +1,7 @@
 from fastapi import APIRouter, HTTPException, status
 from pydantic import BaseModel
 import keyword
-
+from services.globalandlocal import greet, display, displayvar, funlocal, ss, globalvar, glovslocal
 
 class EmptyClass:
     pass  # No methods or attributes yet
@@ -214,8 +214,20 @@ async def tutorial_3():
 
     funZero()
 
+    #Global and Local Variables
+    localandglobvar = []
+    localandglobvar.append(greet())
+    localandglobvar.append(display())
+    localandglobvar.append(displayvar)
+
+    #Use of Local and Global variables
+    localhere = funlocal()
+    globralhere = ss
+
+
     return {"eligible" : eligible , "travel": travel, "person" :person, "discount": discount, "person2": s, "typeofnumber":numbertype,
             "loopvals": loopvals, "resfunction": res, "eveodd1" : eveodd1, "eveodd2": eveodd2, "defparafunc": defparafunc, "typeofdefpara": typeofdefpara,
             "strres1": strres1, "strres2":strres2, "resnameage1": resnameage1, "resnameage2": resnameage2, "resnametype": resnametype,
             "argsres": argsres, "innerfunc": innerfunc, "returnfunc": returnfunc, "mutares": mutares, "immutares": immutares, "passval": passval,
-            "personclass": p , "type_p": type_p}
+            "personclass": p , "type_p": type_p, "localandglobvar": localandglobvar,"localhere": localhere, "globralhere":globralhere, "globalvar": globalvar,
+            "glovslocal": glovslocal}
