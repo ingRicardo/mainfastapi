@@ -2,10 +2,26 @@ from fastapi import APIRouter, HTTPException, status
 from pydantic import BaseModel
 import keyword
 
+
+class EmptyClass:
+    pass  # No methods or attributes yet
+
+class Person:
+    def __init__(self, name, age):
+        self.name = name
+        self.age = age
+
+    def greet(self):
+        pass  # Placeholder for greet method
+
+
 router = APIRouter(
     prefix="/tuto",
     tags=["Tuto_3"]
 )
+
+def funZero():
+    pass
 
 def fun():
     return "Welcome to Riky"
@@ -178,8 +194,28 @@ async def tutorial_3():
     myFunimmuta(a)
     immutares= a
 
+    #Python pass Statement
+    x = 10
+
+    if x > 5:
+        pass  # Placeholder for future logic
+    else:
+        print("x is 5 or less")
+
+    passval = []
+    for i in range(5):
+        if i == 3:
+            pass  # Do nothing when i is 3
+        else:
+            passval.append(i)
+
+    p = Person("Emily", 30)
+    type_p = str(type(p))
+
+    funZero()
 
     return {"eligible" : eligible , "travel": travel, "person" :person, "discount": discount, "person2": s, "typeofnumber":numbertype,
             "loopvals": loopvals, "resfunction": res, "eveodd1" : eveodd1, "eveodd2": eveodd2, "defparafunc": defparafunc, "typeofdefpara": typeofdefpara,
             "strres1": strres1, "strres2":strres2, "resnameage1": resnameage1, "resnameage2": resnameage2, "resnametype": resnametype,
-            "argsres": argsres, "innerfunc": innerfunc, "returnfunc": returnfunc, "mutares": mutares, "immutares": immutares}
+            "argsres": argsres, "innerfunc": innerfunc, "returnfunc": returnfunc, "mutares": mutares, "immutares": immutares, "passval": passval,
+            "personclass": p , "type_p": type_p}
