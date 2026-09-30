@@ -1,9 +1,10 @@
 # main.py
 from fastapi import FastAPI
+import uvicorn
 from controllers.item_controller import router as item_router
 from controllers.tuto_controller import router as tuto_router
 from controllers.tuto_keywords import router as tuto_keywords
-
+from controllers.tuto_controller_3 import router as tuto_3
 
 # Initialize the FastAPI application instance
 app = FastAPI(title="My FastAPI App")
@@ -13,6 +14,7 @@ app = FastAPI(title="My FastAPI App")
 app.include_router(item_router)
 app.include_router(tuto_router)
 app.include_router(tuto_keywords)
+app.include_router(tuto_3)
 
 # Define a GET route at the root URL ("/")
 @app.get("/")
@@ -25,4 +27,9 @@ def read_root():
 def tuto():
     print('tutorial')
     return {"message ": "this is a basic tutorial"}
-    
+
+def main():
+    uvicorn.run("main:app", host="127.0.0.1", port=8000, reload=True)
+
+if __name__ == "__main__":
+    main()
