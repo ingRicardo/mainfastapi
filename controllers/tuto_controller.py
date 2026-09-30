@@ -59,7 +59,21 @@ async def data_types():
         t_type_0 = "0 is falsy"
 
 
+    # Set Data Type
+    s1 = {"a", "a", "b", "c", "b"}
+
+    s2 = {"Riky", "41", "41"}
+
+    setvalues =""
+    for i in s2:
+        setvalues += i + " "
+    setvalues = setvalues.strip()
+
+    # Dictionary Data Type
+    d = {1: 'Mac', 2: 'Olv', 3: 'RAMO'}
+
+
     return  { "x" : x, "name" : name, "a" : a, "b" : b, "real": real , "imag" : imag ,
               "alist" : alist , "blist" : blist , "b3" : b3, "bm3" : bm3 , "s":s, "type_string_s": type_string_s , 
               "tupstring": tupstring, "tup2": tup2, "tup2min": tup2min , "b_type1":b_type1 , "b_type2": b_type2,
-               "t_type_1" : t_type_1, "t_type_0" : t_type_0 }
+               "t_type_1" : t_type_1, "t_type_0" : t_type_0, "s1" : s1 , "s2" : s2, "setvalues ": setvalues, "d1":d[1], "get(2)": d.get(2) }
