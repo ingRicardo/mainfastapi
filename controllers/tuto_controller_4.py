@@ -1,6 +1,6 @@
 from fastapi import APIRouter, HTTPException, status
 from pydantic import BaseModel
-from services.recursion import resfact
+from services.recursion import resfact, resfib, typerecursion
 
 router = APIRouter(
     prefix="/tuto",
@@ -11,4 +11,4 @@ router = APIRouter(
 @router.get("/tuto4")
 async def tutorial_4():
     pass
-    return {"resfact": resfact}
+    return {"resfact": resfact, "resfib": resfib, "typerecursion": typerecursion}
