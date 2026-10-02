@@ -6,7 +6,7 @@ from controllers.tuto_controller import router as tuto_router
 from controllers.tuto_keywords import router as tuto_keywords
 from controllers.tuto_controller_3 import router as tuto_3
 from controllers.play_game_controller import router as playgame
-
+from controllers.tuto_controller_4 import router as tuto4
 
 # Initialize the FastAPI application instance
 app = FastAPI(title="My FastAPI App")
@@ -18,6 +18,7 @@ app.include_router(tuto_router)
 app.include_router(tuto_keywords)
 app.include_router(tuto_3)
 app.include_router(playgame)
+app.include_router(tuto4)
 
 # Define a GET route at the root URL ("/")
 @app.get("/")
